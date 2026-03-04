@@ -51,8 +51,7 @@ jobs:
 
       # 7. Lancer l'application complète
       - name: Start application with Docker Compose
-        run: docker-compose up -d
-
+        run: docker compose up -d
       # 8. Attendre que les services démarrent
       - name: Wait for services
         run: sleep 20
@@ -63,4 +62,4 @@ jobs:
 
       # 10. Afficher les logs
       - name: Show logs
-        run: docker-compose logs
+        run: docker compose logs
