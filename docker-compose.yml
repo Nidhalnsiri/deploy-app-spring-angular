@@ -1,11 +1,11 @@
 version: "3.3"
 services:
   angular-app:
-    image: nidhaal/angular-frontend:latest
+    image: nidhaal/angular-frontend:latest    # ← modifié
     ports:
-      - "0.0.0.0:4200:80"      
+      - "0.0.0.0:4200:80"
   spring-boot-app:
-    image: nidhaal/springboot-backend:latest
+    image: nidhaal/springboot-backend:latest  # ← modifié
     ports:
       - "0.0.0.0:8081:8081"
     environment:
@@ -20,17 +20,3 @@ services:
       - SPRING_MVC_CORS_ALLOWED_HEADERS=*
     depends_on:
       - mysql
-
-  mysql:
-    image: mysql:5.7
-    restart: always
-    environment:
-      MYSQL_DATABASE: 'demo'
-      MYSQL_ROOT_USERNAME: 'root'
-      MYSQL_ROOT_PASSWORD: 'root'
-    ports:
-      - '0.0.0.0:3306:3306'
-    volumes:
-      - demo:/var/lib/mysql
-volumes:
-  demo:
