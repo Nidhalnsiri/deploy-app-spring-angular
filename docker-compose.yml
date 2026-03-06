@@ -2,14 +2,14 @@ services:
   angular-app:
     image: nidhaal/angular-frontend:latest
     ports:
-      - "0.0.0.0:4200:80"
+      - "4200:80"
     depends_on:
       - spring-boot-app
 
   spring-boot-app:
     image: nidhaal/springboot-backend:latest
     ports:
-      - "0.0.0.0:8081:8081"
+      - "8180:8081"
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/demo
       - SPRING_DATASOURCE_USERNAME=root
